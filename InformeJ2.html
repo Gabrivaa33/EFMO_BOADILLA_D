@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Informe Jornada 2</title>
+  <title>Informe Jornada 1</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
@@ -161,6 +161,14 @@
       font-weight: bold;
     }
 
+    /* COLORES DE PUNTUACIÓN - DEFINIDOS GLOBALMENTE */
+    .score-red { background-color: #ff4444 !important; }
+    .score-gray { background-color: #cccccc !important; }
+    .score-yellow { background-color: #ffdd00 !important; }
+    .score-green { background-color: #44ff44 !important; }
+    .score-blue { background-color: #44ddff !important; }
+    .score-darkblue { background-color: #374df5 !important; }
+
     /* ESTILOS RESPONSIVE PARA CAMPOS DE FÚTBOL */
     .field-container-responsive {
       width: 100%;
@@ -178,11 +186,7 @@
       border-radius: 8px;
       margin: 0 auto;
       box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Altura del campo responsive */
-    .field-responsive {
-      height: 400px; /* Reducida para móviles */
+      height: 450px; /* Un poco más alto para 5 jugadores */
     }
 
     .grass-pattern-responsive {
@@ -194,7 +198,7 @@
       background-image:
         linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-      background-size: 30px 30px; /* Más pequeño para móviles */
+      background-size: 30px 30px;
       opacity: 0.3;
     }
 
@@ -207,121 +211,292 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 20px 10px; /* Menos padding en móviles */
+      padding: 15px 5px;
     }
 
-    /* Añade esto en la sección de estilos responsive */
-.player-row-responsive {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    flex-wrap: nowrap;
-    gap: 5px; /* Reduce el espacio entre jugadores */
-}
+    .player-row-responsive {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      flex-wrap: nowrap;
+      gap: 5px;
+    }
 
-.player-responsive {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    flex-shrink: 1; /* Cambia de 0 a 1 para permitir compresión */
-    min-width: 55px; /* Reduce el ancho mínimo */
-    flex: 1; /* Permite que se distribuyan equitativamente */
-}
-
-.player-circle-responsive {
-    width: 35px; /* Más pequeño para 5 jugadores */
-    height: 35px;
-    border-radius: 50%;
-    background-color: #d32f2f;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    margin-bottom: 2px; /* Reduce margen */
-    z-index: 2;
-    border: 2px solid white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    font-size: 0.7rem; /* Texto más pequeño */
-}
-
-.player-name-responsive {
-    font-size: 0.6rem; /* Más pequeño para 5 jugadores */
-    color: white;
-    text-align: center;
-    max-width: 60px; /* Más estrecho */
-    overflow: visible;
-    text-overflow: unset;
-    white-space: normal;
-    z-index: 1;
-    font-weight: 600;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    line-height: 1.1; /* Menor interlineado */
-    word-wrap: break-word;
-    hyphens: auto;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    min-height: 1.5em; /* Menor altura mínima */
-}
-
-.players-formation-responsive {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 15px 5px; /* Menos padding lateral */
-}
-
-/* Para móviles muy pequeños, ajustes adicionales */
-@media (max-width: 480px) {
     .player-responsive {
-        min-width: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      flex-shrink: 1;
+      min-width: 55px;
+      flex: 1;
     }
-    
-    .player-circle-responsive {
-        width: 30px;
-        height: 30px;
-        font-size: 0.65rem;
-    }
-    
-    .player-name-responsive {
-        font-size: 0.55rem;
-        max-width: 50px;
-        line-height: 1.0;
-    }
-    
-    .players-formation-responsive {
-        padding: 10px 3px;
-    }
-}
 
-/* Para tablets y desktop puedes mantener tamaños normales */
-@media (min-width: 769px) {
-    .player-responsive {
-        min-width: 65px;
-    }
-    
     .player-circle-responsive {
-        width: 40px;
-        height: 40px;
-        font-size: 0.8rem;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: #d32f2f;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-bottom: 2px;
+      z-index: 2;
+      border: 2px solid white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      font-size: 0.7rem;
     }
-    
+
+    .player-rating-responsive {
+      position: relative;
+      color: #000;
+      padding: 1px 4px;
+      border-radius: 8px;
+      font-size: 0.7rem;
+      font-weight: bold;
+      margin-bottom: 3px;
+      z-index: 3;
+      min-width: 30px;
+      text-align: center;
+    }
+
     .player-name-responsive {
-        font-size: 0.7rem;
-        max-width: 70px;
+      font-size: 0.6rem;
+      color: white;
+      text-align: center;
+      max-width: 60px;
+      overflow: visible;
+      text-overflow: unset;
+      white-space: normal;
+      z-index: 1;
+      font-weight: 600;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      line-height: 1.1;
+      word-wrap: break-word;
+      hyphens: auto;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      min-height: 1.5em;
     }
-}
+
+    /* Estilos para la alineación con banquillo */
+    .container-responsive {
+      width: 100%;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    .header-responsive {
+      background-color: #d32f2f;
+      color: white;
+      padding: 12px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .team-name-responsive {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .formation-responsive {
+      font-size: 0.9rem;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 4px 8px;
+      border-radius: 15px;
+    }
+
+    .content-responsive {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bench-responsive {
+      width: 100%;
+      padding: 15px;
+      background-color: #f8f8f8;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .bench-title-responsive {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 12px;
+      color: #333;
+      text-align: center;
+    }
+
+    .bench-player-responsive {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .bench-player-responsive:last-child {
+      border-bottom: none;
+    }
+
+    .bench-player-info-responsive {
+      display: flex;
+      align-items: center;
+    }
+
+    .bench-player-number-responsive {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background-color: #d32f2f;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      margin-right: 8px;
+      font-weight: bold;
+    }
+
+    .bench-player-name-responsive {
+      font-size: 0.8rem;
+      color: #333 !important;
+      white-space: normal;
+      line-height: 1.2;
+    }
+
+    .bench-player-rating-responsive {
+      padding: 2px 6px;
+      border-radius: 8px;
+      font-size: 0.7rem;
+      font-weight: bold;
+      min-width: 30px;
+      text-align: center;
+      color: #000 !important;
+    }
+
+    /* MEDIA QUERIES */
     @media (max-width: 768px) {
+      .container-informe {
+        padding: 20px 15px;
+      }
+
+      .header-informe h1 {
+        font-size: 2rem;
+      }
+
+      .resultado-principal {
+        font-size: 1.8rem;
+      }
+
+      .seccion {
+        padding: 20px 15px;
+        margin-bottom: 30px;
+      }
+
+      .seccion h3 {
+        font-size: 1.3rem;
+      }
+
       .btn-volver {
         padding: 8px 16px;
         font-size: 0.9rem;
+      }
+
+      .content-responsive {
+        flex-direction: column;
+      }
+
+      .bench-responsive {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .field-responsive {
+        height: 420px;
+      }
+
+      .player-responsive {
+        min-width: 50px;
+      }
+      
+      .player-circle-responsive {
+        width: 30px;
+        height: 30px;
+        font-size: 0.65rem;
+      }
+      
+      .player-name-responsive {
+        font-size: 0.55rem;
+        max-width: 50px;
+        line-height: 1.0;
+      }
+      
+      .players-formation-responsive {
+        padding: 10px 3px;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .content-responsive {
+        flex-direction: row;
+      }
+
+      .field-responsive {
+        height: 450px;
+      }
+
+      .player-responsive {
+        min-width: 65px;
+      }
+      
+      .player-circle-responsive {
+        width: 40px;
+        height: 40px;
+        font-size: 0.8rem;
+      }
+      
+      .player-name-responsive {
+        font-size: 0.7rem;
+        max-width: 70px;
+      }
+
+      .bench-responsive {
+        width: 250px;
+        border-top: none;
+        border-left: 1px solid #e0e0e0;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .field-responsive {
+        height: 500px;
+      }
+
+      .player-circle-responsive {
+        width: 45px;
+        height: 45px;
+        font-size: 0.85rem;
+      }
+
+      .player-name-responsive {
+        font-size: 0.75rem;
+        max-width: 80px;
+      }
+
+      .players-formation-responsive {
+        padding: 25px 15px;
+      }
+
+      .player-responsive {
+        min-width: 75px;
       }
     }
   </style>
@@ -332,8 +507,8 @@
   <a href="InformesPost-partido.html" class="btn-volver">← Volver a Todos los Informes</a>
 
   <div class="header-informe">
-    <h1>Informe Jornada 2</h1>
-    <div class="resultado-principal">La Mutual Juan XXIII 'B' - EFMO Boadilla 'D'</div>
+    <h1>Informe Jornada 1</h1>
+    <div class="resultado-principal">EFMO Boadilla 'D' 5-1 Agrup. Lucero Linces 'B'</div>
   </div>
 
   <!-- Alineación Probable -->
@@ -355,22 +530,22 @@
       // Datos de los jugadores organizados por posición - ALINEACIÓN PROBABLE
       const playersProbable = {
         'portero': [
-          { number: '13', name: 'Rodri' }
+          { number: '1', name: 'Edu' }
         ],
         'defensas': [
           { number: '16', name: 'Luisja' },
+          { number: '14', name: 'J. Ogayar' },
           { number: '5', name: 'Adriano' },
-          { number: '10', name: 'Kito' },
-          { number: '7', name: 'J. Martínez' },
+          { number: '25', name: 'Rodri' },
           { number: '17', name: 'J. Zarcero' }
         ],
         'mediocentros': [
           { number: '2', name: 'Á. Brito' },
-          { number: '25', name: 'Rodri' },
+          { number: '10', name: 'Kito' },
           { number: '23', name: 'Javi Pardo' }
         ],
         'delanteros': [
-          { number: '9', name: 'S. Griñán' },
+          { number: '18', name: 'Manu de V.' },
           { number: '24', name: 'H. Panizo' }
         ]
       };
@@ -419,4 +594,3 @@
 
 </body>
 </html>
-       
