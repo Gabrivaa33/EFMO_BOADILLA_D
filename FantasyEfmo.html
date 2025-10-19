@@ -270,6 +270,7 @@ function render(){
   filtered.forEach(p=>{
     const lastThree = p.performances.slice(-3);
     const totalPoints = calculateTotals(p.performances).points;
+    const avgPoints = calculateAvg(p.performances); // 🟡 Añadido cálculo de media
 
     let bgClass = '';
     if (p.status === 'OK') bgClass = 'bg-green-800';
@@ -289,6 +290,7 @@ function render(){
         <div class='text-right'>
           <div class='text-xs text-slate-400'>Puntos</div>
           <div class='text-lg font-bold'>${totalPoints}</div>
+          <div class='text-xs text-slate-300 mt-1'>Media: ${avgPoints}</div> <!-- 🟢 Nueva línea -->
         </div>
       </div>
       <div class='mt-3'>
@@ -304,9 +306,9 @@ function render(){
   document.getElementById('injuredCount').textContent =
     players.filter(p => p.status === "Lesionado").length;
 
-renderInjuryFeed(); // 🔔 Actualiza las noticias
-  
+  renderInjuryFeed(); // 🔔 Actualiza las noticias
 }
+
 
 function openModal(id){
   const p=players.find(x=>x.id===id); if(!p) return;
