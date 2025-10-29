@@ -791,125 +791,128 @@
 
   <script>
     // Datos de jugadores del Equipo D
+  
+    // {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+    
     const players = [
       { id:1, name:'Edu', pos:'Portero', status:'OK', performances:[
         {points:4, minutes:35, goals:0, assists:0, cards:0, comment:'↪️ (6,8)'},
         {points:5, minutes:35, goals:0, assists:0, cards:0, comment:'↩️ (7,0)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+        {points:-8, minutes:25, goals:0, assists:0, cards:0, comment:'🟥 (5,4+🟥)'}
       ]},
       
       { id:2, name:'Rodri', pos:'Portero', status:'OK', performances:[
         {points:6, minutes:35, goals:0, assists:0, cards:0, comment:'↩️ (7,2)'},
         {points:3, minutes:35, goals:0, assists:0, cards:0, comment:'↪️ (6,7)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+        {points:3, minutes:0, goals:0, assists:0, cards:1, comment:'↩️ (6,7)'}
       ]},
       
       { id:3, name:'Thiago', pos:'Defensa', status:'OK', performances:[
         {points:4, minutes:61, goals:0, assists:0, cards:0, comment:'↪️ (6,8)'},
         {points:7, minutes:54, goals:0, assists:0, cards:0, comment:'↪️↩️ (7,5)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+        {points:6, minutes:70, goals:0, assists:0, cards:0, comment:'(7,2)'}
       ]},
       
       { id:4, name:'Pablo', pos:'Defensa', status:'OK', performances:[
         {points:8, minutes:56, goals:0, assists:0, cards:0, comment:'↪️↩️ (7,6)'},
         {points:7, minutes:70, goals:0, assists:0, cards:0, comment:'(7,4)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+        {points:7, minutes:35, goals:0, assists:0, cards:0, comment:'↩️ (7,4)'}
       ]},
       
       { id:5, name:'Yago', pos:'Defensa', status:'OK', performances:[
         {points:6, minutes:30, goals:0, assists:0, cards:0, comment:'↪️↩️ (7,3)'},
         {points:6, minutes:34, goals:0, assists:0, cards:0, comment:'↩️↪️↩️ (7,2)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+        {points:3, minutes:35, goals:0, assists:0, cards:0, comment:'↪️ (6,7)'}
       ]},
       
       { id:6, name:'Alonso', pos:'Defensa', status:'OK', performances:[
         {points:5, minutes:23, goals:0, assists:0, cards:0, comment:'↩️↪️↩️ (7,0)'},
         {points:3, minutes:16, goals:0, assists:0, cards:0, comment:'↩️↪️ (6,7)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+        {points:4, minutes:13, goals:0, assists:0, cards:0, comment:'↩️ (6,9)'}
       ]},
       
       { id:7, name:'Lucas S.', pos:'Defensa', status:'OK', performances:[
         {points:-1, minutes:40, goals:0, assists:0, cards:1, comment:'🟨↩️↪️ (5,9)'},
         {points:6, minutes:49, goals:0, assists:0, cards:0, comment:'↪️↩️↪️ (7,2)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+        {points:5, minutes:68, goals:0, assists:0, cards:0, comment:'↪️ (7,0)'}
       ]},
       
       { id:8, name:'Mario', pos:'Defensa', status:'OK', performances:[
         {points:13, minutes:70, goals:1, assists:0, cards:0, comment:'⚽ (7,7+⚽)'},
         {points:6, minutes:70, goals:0, assists:0, cards:0, comment:'(7,2)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+        {points:10, minutes:68, goals:1, assists:0, cards:0, comment:'↪️⚽🅿️ (7,5+⚽🅿️)'}
       ]},
       
       { id:9, name:'Lucas G.', pos:'Defensa', status:'OK', performances:[
         {points:6, minutes:54, goals:0, assists:0, cards:0, comment:'↪️↩️↪️ (7,3)'},
         {points:7, minutes:36, goals:0, assists:1, cards:0, comment:'↪️↩️↪️🅰️ (7,3+🅰️)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+        {points:6, minutes:57, goals:0, assists:0, cards:0, comment:'↪️ (7,3)'}
       ]},
       
       { id:10, name:'Papu', pos:'Defensa', status:'OK', performances:[
         {points:3, minutes:16, goals:0, assists:0, cards:0, comment:'↩️↪️↩️ (6,7)'},
         {points:1, minutes:21, goals:0, assists:0, cards:1, comment:'🟨↩️↪️↩️ (6,2)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+        {points:2, minutes:2, goals:0, assists:0, cards:0, comment:'↩️ (6,5)'}
       ]},
       
       { id:11, name:'Íñigo', pos:'Centrocampista', status:'Duda', performances:[
         {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
         {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'}
       ]},
       
       { id:12, name:'Esteban', pos:'Centrocampista', status:'OK', performances:[
         {points:13, minutes:52, goals:1, assists:0, cards:0, comment:'↪️↩️⚽ (7,8+⚽)'},
         {points:2, minutes:36, goals:0, assists:0, cards:1, comment:'🟨↪️↩️↪️ (6,5)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+        {points:3, minutes:35, goals:0, assists:0, cards:0, comment:'↪️ (6,6)'}
       ]},
       
       { id:13, name:'Nacho', pos:'Centrocampista', status:'OK', performances:[
         {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
         {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+        {points:3, minutes:2, goals:0, assists:0, cards:0, comment:'↩️ (6,6)'}
       ]},
       
       { id:14, name:'Marcos', pos:'Centrocampista', status:'OK', performances:[
         {points:4, minutes:32, goals:0, assists:0, cards:0, comment:'↩️↪️ (6,8)'},
         {points:14, minutes:51, goals:1, assists:0, cards:0, comment:'↩️⚽ (8,0+⚽)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+        {points:2, minutes:25, goals:0, assists:0, cards:0, comment:'↪️ (6,4)'}
       ]},
       
       { id:15, name:'Gonzalo', pos:'Centrocampista', status:'OK', performances:[
         {points:7, minutes:56, goals:0, assists:0, cards:0, comment:'↪️↩️ (7,4)'},
         {points:5, minutes:53, goals:0, assists:0, cards:0, comment:'↪️↩️ (7,0)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+        {points:5, minutes:35, goals:0, assists:0, cards:0, comment:'↩️ (7,0)'}
       ]},
       
       { id:16, name:'Gascón', pos:'Centrocampista', status:'OK', performances:[
         {points:9, minutes:40, goals:1, assists:0, cards:0, comment:'↩️↪️⚽ (7,3+⚽)'},
         {points:10, minutes:34, goals:0, assists:2, cards:0, comment:'↩️↪️↩️🅰️🅰️ (7,6+🅰️🅰️)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'}
       ]},
       
       { id:17, name:'Javi', pos:'Centrocampista', status:'OK', performances:[
         {points:9, minutes:56, goals:0, assists:1, cards:0, comment:'↪️↩️🅰️ (7,6+🅰️)'},
         {points:12, minutes:41, goals:1, assists:0, cards:0, comment:'↪️↩️↪️↩️⚽ (7,7+⚽)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+        {points:5, minutes:57, goals:0, assists:0, cards:0, comment:'↪️ (7,1)'}
       ]},
       
       { id:18, name:'Diego', pos:'Atacante', status:'OK', performances:[
         {points:6, minutes:62, goals:0, assists:0, cards:0, comment:'↪️↩️ (7,3)'},
         {points:3, minutes:49, goals:0, assists:0, cards:0, comment:'↪️↩️↪️ (6,7)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+        {points:11, minutes:70, goals:1, assists:0, cards:0, comment:'⚽ (7,6+⚽)'}
       ]},
       
       { id:19, name:'Sergio', pos:'Atacante', status:'OK', performances:[
         {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
         {points:3, minutes:38, goals:0, assists:0, cards:0, comment:'↩️↪️↩️ (6,7)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+        {points:6, minutes:70, goals:0, assists:0, cards:0, comment:'(7,3)'}
       ]},
       
       { id:20, name:'Lucas O.', pos:'Atacante', status:'OK', performances:[
         {points:16, minutes:52, goals:2, assists:0, cards:0, comment:'↪️↩️⚽⚽🅿️ (8,3+⚽+⚽🅿️)'},
-        {points:8, minutes:48, goals:1, assists:0, cards:0, comment:'↪️↩️↪️ (7,0+⚽)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
+        {points:8, minutes:48, goals:1, assists:0, cards:0, comment:'↪️↩️↪️⚽ (7,0+⚽)'},
+        {points:5, minutes:13, goals:0, assists:0, cards:0, comment:'↩️ (7,0)'}
       ]}
     ];
 
