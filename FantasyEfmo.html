@@ -1200,6 +1200,9 @@
       }
     });
 
+    document.getElementById('positionFilter').addEventListener('change', renderPlayers);
+    document.getElementById('statusFilter').addEventListener('change', renderPlayers);
+
     // Inicializar
     render();
   </script>
