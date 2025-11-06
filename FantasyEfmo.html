@@ -723,7 +723,10 @@
       <div class="players-section">
         <div class="players-header">
           <h2 class="players-title">Plantilla del Equipo</h2>
-          <div class="players-count">Mostrando <span id="showingCount">20</span> de 20 jugadores</div>
+          <div class="players-count">
+            Mostrando <span id="showingCount">0</span> de <span id="totalCount">0</span> jugadores
+          </div>
+
         </div>
         <div id="gridView" class="players-grid">
           <!-- Las tarjetas de jugadores se cargarán aquí -->
@@ -1116,6 +1119,8 @@
       document.getElementById('injuredCount').textContent = players.filter(p => p.status === "Lesionado").length;
       document.getElementById('doubtCount').textContent = players.filter(p => p.status === "Duda").length;
       document.getElementById('showingCount').textContent = filtered.length;
+      document.getElementById("totalCount").textContent = players.length;
+      document.getElementById("showingCount").textContent = players.length;
 
       renderInjuryFeed();
     }
