@@ -724,7 +724,7 @@
         <div class="players-header">
           <h2 class="players-title">Plantilla del Equipo</h2>
           <div class="players-count">
-            Mostrando <span id="showingCount">0</span> de <span id="totalCount">0</span> jugadores
+            Mostrando <span id="showingCount">20</span> de 22 jugadores
           </div>
 
         </div>
@@ -1119,8 +1119,6 @@
       document.getElementById('injuredCount').textContent = players.filter(p => p.status === "Lesionado").length;
       document.getElementById('doubtCount').textContent = players.filter(p => p.status === "Duda").length;
       document.getElementById('showingCount').textContent = filtered.length;
-      document.getElementById("totalCount").textContent = players.length;
-      document.getElementById("showingCount").textContent = players.length;
 
       renderInjuryFeed();
     }
@@ -1200,8 +1198,6 @@
       }
     });
 
-    document.getElementById('positionFilter').addEventListener('change', renderPlayers);
-    document.getElementById('statusFilter').addEventListener('change', renderPlayers);
 
     // Inicializar
     render();
