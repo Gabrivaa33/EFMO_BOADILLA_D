@@ -313,6 +313,25 @@
       white-space: nowrap;
     }
 
+    /* NUEVOS ESTILOS PARA TARJETAS */
+    .player-cards-side-responsive {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+      position: absolute;
+      right: 38px;
+      top: -8px;
+      z-index: 4;
+    }
+    
+    .player-cards-row-responsive {
+      font-size: 0.9rem;
+      line-height: 1;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+      white-space: nowrap;
+    }
+
     /* Estilos para la alineación con banquillo */
     .container-responsive {
       width: 100%;
@@ -466,6 +485,16 @@
       .player-goals-row-responsive, .player-assists-row-responsive {
         font-size: 0.8rem;
       }
+
+      /* Ajustes para tarjetas en móviles */
+      .player-cards-side-responsive {
+        right: 32px;
+        top: -6px;
+      }
+      
+      .player-cards-row-responsive {
+        font-size: 0.8rem;
+      }
     }
 
     @media (max-width: 480px) {
@@ -495,6 +524,11 @@
 
       .player-stats-side-responsive {
         left: 28px;
+        top: -5px;
+      }
+
+      .player-cards-side-responsive {
+        right: 28px;
         top: -5px;
       }
     }
@@ -533,6 +567,11 @@
         left: 42px;
         top: -10px;
       }
+
+      .player-cards-side-responsive {
+        right: 42px;
+        top: -10px;
+      }
     }
 
     @media (min-width: 1024px) {
@@ -563,6 +602,11 @@
         left: 48px;
         top: -12px;
       }
+
+      .player-cards-side-responsive {
+        right: 48px;
+        top: -12px;
+      }
     }
   </style>
 </head>
@@ -573,7 +617,7 @@
 
   <div class="header-informe">
     <h1>Informe Jornada 5</h1>
-    <div class="resultado-principal">Escuela Fútbol Madrid Sur 'B' - EFMO Boadilla 'D'</div>
+    <div class="resultado-principal">Escuela Fútbol Madrid Sur 'B' 2-1 EFMO Boadilla 'D'</div>
   </div>
 
   <!-- Alineación Probable -->
