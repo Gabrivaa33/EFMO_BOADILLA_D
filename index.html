@@ -4,8 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>E.F.M.O. Boadilla 'D'</title>
+  <link rel="manifest" href="/EFMO_BOADILLA_D/manifest.json">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <style>
+
+    #installButton {
+  display: none;
+  background: linear-gradient(135deg, #0078ff, #00c6ff);
+  color: white;
+  font-size: 1.1em;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+#installButton:hover {
+  transform: scale(1.05);
+}
+    
     * {
       box-sizing: border-box;
     }
@@ -194,9 +211,53 @@
   </a>
 </div>
 
+<button id="installButton" style="display:none; padding:10px 20px; border:none; border-radius:8px; background:#0078ff; color:white; font-size:16px;">
+  📲 Añadir a pantalla de inicio
+</button>
+  
+<script>
+  let deferredPrompt;
+  const addBtn = document.getElementById('installButton');
+
+  // Escucha el evento que indica que se puede instalar la PWA
+  window.addEventListener('beforeinstallprompt', (e) => {
+    // Evita que el navegador muestre el banner automático
+    e.preventDefault();
+    deferredPrompt = e;
+    // Muestra el botón
+    addBtn.style.display = 'block';
+  });
+
+  // Cuando el usuario hace clic en el botón
+  addBtn.addEventListener('click', async () => {
+    addBtn.style.display = 'none';
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      console.log(`Instalación: ${outcome}`);
+      deferredPrompt = null;
+    }
+  });
+
+  // Si ya está instalada, ocultamos el botón
+  window.addEventListener('appinstalled', () => {
+    console.log('PWA instalada');
+    addBtn.style.display = 'none';
+  });
+</script>
+
+  
 <footer>
   Creador de la página web:<br>Gabriel Veiga Álvarez
 </footer>
+  
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/EFMO_BOADILLA/service-worker.js')
+      .then(() => console.log('✅ Service worker registrado'))
+      .catch(err => console.error('❌ Error registrando service worker', err));
+  }
+</script>
 
 </body>
 </html>
