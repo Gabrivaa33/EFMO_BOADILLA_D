@@ -3,8 +3,8 @@ self.addEventListener('install', e => {
     caches.open('efmo-cache').then(cache => {
       return cache.addAll([
         '/',
-        '/EFMO_BOADILLA/',
-        '/EFMO_BOADILLA/index.html'
+        '/EFMO_BOADILLA_D/',
+        '/EFMO_BOADILLA_D/index.html'
       ]);
     })
   );
