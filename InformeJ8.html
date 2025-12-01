@@ -708,7 +708,7 @@
     <div class="container-responsive">
       <div class="header-responsive">
         <div class="team-name-responsive">E.F.M.O. Boadilla</div>
-        <div class="formation-responsive">5-3-2</div>
+        <div class="formation-responsive">5-2-3</div>
       </div>
 
       <div class="content-responsive">
@@ -736,40 +736,39 @@
       // MODIFICADO: Agregar campo 'cards' a cada jugador
       const playersConfirmada = {
         'portero': [
-          { number: '1', name: 'Edu', rating: '7,3', goals: 0, assists: 0, cards: null }
+          { number: '1', name: 'Edu', rating: '7,2', goals: 0, assists: 0, cards: null }
         ],
         'defensas': [
-          { number: '21', name: 'Lucas G.', rating: '7,0', goals: 0, assists: 0, cards: null },
-          { number: '4', name: 'Lucas S.', rating: '7,0', goals: 0, assists: 0, cards: '🟨' },
-          { number: '5', name: 'Thiago', rating: '6,9', goals: 0, assists: 0, cards: null },
+          { number: '21', name: 'Lucas G.', rating: '6,7', goals: 0, assists: 0, cards: '🟨' },
+          { number: '4', name: 'Lucas S.', rating: '6,9', goals: 0, assists: 0, cards: null },
           { number: '6', name: 'Pablo', rating: '7,0', goals: 0, assists: 0, cards: null },
-          { number: '2', name: 'Mario', rating: '7,3', goals: 0, assists: 0, cards: null }
+          { number: '3', name: 'Alonso', rating: '6,6', goals: 0, assists: 0, cards: null },
+          { number: '2', name: 'Mario', rating: '7,7', goals: 0, assists: 1, cards: null }
         ],
         'mediocentros': [
-          { number: '8', name: 'Íñigo', rating: '6,8', goals: 0, assists: 0, cards: null },
-          { number: '7', name: 'Javi', rating: '7,2', goals: 0, assists: 0, cards: null },
-          { number: '14', name: 'Esteban', rating: '7,0', goals: 0, assists: 0, cards: null }
+          { number: '8', name: 'Íñigo', rating: '7,8', goals: 0, assists: 1, cards: null },
+          { number: '10', name: 'Gonzalo', rating: '7,3', goals: 0, assists: 0, cards: null }
         ],
         'delanteros': [
-          { number: '9', name: 'Lucas O.', rating: '6,8', goals: 0, assists: 0, cards: null },
-          { number: '17', name: 'Diego', rating: '6,7', goals: 0, assists: 0, cards: null }
+          { number: '7', name: 'Javi', rating: '8,7', goals: 2, assists: 0, cards: null },
+          { number: '9', name: 'Lucas O.', rating: '7,2', goals: 1, assists: 0, cards: '🟨' },
+          { number: '22', name: 'Brandon', rating: '6,8', goals: 0, assists: 0, cards: null }
         ]
       };
 
       // Datos del banquillo - MODIFICADO: Agregar campo 'cards'
       const benchPlayers = [
-        { number: '13', name: 'Rodri', rating: '5,8', goals: 0, assists: 0, cards: null },
-        { number: '3', name: 'Alonso', rating: '6,8', goals: 0, assists: 0, cards: null },
-        { number: '12', name: 'Ronald', rating: '6,8', goals: 0, assists: 0, cards: null },
-        { number: '15', name: 'Papu', rating: '7,1', goals: 0, assists: 0, cards: null },
-        { number: '20', name: 'Marcos', rating: '6,6', goals: 0, assists: 0, cards: null },
-        { number: '22', name: 'Brandon', rating: '6,8', goals: 0, assists: 0, cards: '🟨' },
-        { number: '11', name: 'Gascón', rating: '7,0', goals: 0, assists: 0, cards: null }
+        { number: '13', name: 'Rodri', rating: '6,8', goals: 0, assists: 0, cards: null },
+        { number: '12', name: 'Ronald', rating: '6,7', goals: 0, assists: 0, cards: null },
+        { number: '15', name: 'Papu', rating: '6,6', goals: 0, assists: 0, cards: null },
+        { number: '20', name: 'Marcos', rating: '6,9', goals: 0, assists: 0, cards: '🟨' },
+        { number: '14', name: 'Esteban', rating: '6,7', goals: 0, assists: 0, cards: null },
+        { number: '17', name: 'Diego', rating: '6,6', goals: 0, assists: 0, cards: null }
       ];
 
       // Configuraciones de formaciones
       const formationsConfirmada = {
-        '5-3-2': [
+        '5-2-3': [
           playersConfirmada.delanteros,
           playersConfirmada.mediocentros,
           playersConfirmada.defensas,
@@ -927,43 +926,81 @@
         }, 100);
       }
 
-      renderFormationConfirmada('5-3-2');
+      renderFormationConfirmada('5-2-3');
       renderBench();
     </script>
   </div>
 
-  <!-- Goles 
+  <!-- Goles -->
   <div class="seccion">
     <h3>Goles a Favor</h3>
     <div class="goles-lista">
       <div class="gol">
-        <span class="minuto">43'</span> - Sergio (Asistencia: Diego)
+        <span class="minuto">2'</span> - Lucas O. (Asistencia: Íñigo)
+      </div>
+      <div class="gol">
+        <span class="minuto">12'</span> - Javi (Asistencia: Mario)
+      </div>
+      <div class="gol">
+        <span class="minuto">37'</span> - Javi
       </div>
     </div>
-  </div> -->
+  </div> 
 
   <!-- Cambios -->
   <div class="seccion">
     <h3>Cambios Realizados</h3>
     <div class="cambios-lista">
       <div class="cambio">
-        <span class="minuto">29'</span>
+        <span class="minuto">20'</span>
+        <div class="jugadores-cambio">
+          <span>Mario</span>
+          <span class="flecha">→</span>
+          <span>Ronald</span>
+        </div>
+      </div>
+      <div class="cambio">
+        <span class="minuto">20'</span>
+        <div class="jugadores-cambio">
+          <span>Lucas G.</span>
+          <span class="flecha">→</span>
+          <span>Papu</span>
+        </div>
+      </div>
+      <div class="cambio">
+        <span class="minuto">20'</span>
         <div class="jugadores-cambio">
           <span>Íñigo</span>
+          <span class="flecha">→</span>
+          <span>Esteban</span>
+        </div>
+      </div>
+      <div class="cambio">
+        <span class="minuto">20'</span>
+        <div class="jugadores-cambio">
+          <span>Gonzalo</span>
           <span class="flecha">→</span>
           <span>Marcos</span>
         </div>
       </div>
       <div class="cambio">
-        <span class="minuto">29'</span>
+        <span class="minuto">20'</span>
         <div class="jugadores-cambio">
-          <span>Lucas O.</span>
+          <span>Brandon</span>
           <span class="flecha">→</span>
-          <span>Gascón</span>
+          <span>Diego</span>
         </div>
       </div>
       <div class="cambio">
-        <span class="minuto">47'</span>
+        <span class="minuto">32'</span>
+        <div class="jugadores-cambio">
+          <span>Marcos</span>
+          <span class="flecha">→</span>
+          <span>Gonzalo</span>
+        </div>
+      </div>
+      <div class="cambio">
+        <span class="minuto">35'</span>
         <div class="jugadores-cambio">
           <span>Edu</span>
           <span class="flecha">→</span>
@@ -971,39 +1008,23 @@
         </div>
       </div>
       <div class="cambio">
-        <span class="minuto">47'</span>
+        <span class="minuto">35'</span>
         <div class="jugadores-cambio">
-          <span>Mario</span>
-          <span class="flecha">→</span>
-          <span>Papu</span>
-        </div>
-      </div>
-      <div class="cambio">
-        <span class="minuto">47'</span>
-        <div class="jugadores-cambio">
-          <span>Javi</span>
-          <span class="flecha">→</span>
-          <span>Brandon</span>
-        </div>
-      </div>
-      <div class="cambio">
-        <span class="minuto">54'</span>
-        <div class="jugadores-cambio">
-          <span>Lucas S.</span>
-          <span class="flecha">→</span>
-          <span>Alonso</span>
-        </div>
-      </div>
-      <div class="cambio">
-        <span class="minuto">54'</span>
-        <div class="jugadores-cambio">
-          <span>Lucas G.</span>
-          <span class="flecha">→</span>
           <span>Ronald</span>
+          <span class="flecha">→</span>
+          <span>Mario</span>
         </div>
       </div>
       <div class="cambio">
-          <span class="minuto">65'</span>
+        <span class="minuto">35'</span>
+        <div class="jugadores-cambio">
+          <span>Papu</span>
+          <span class="flecha">→</span>
+          <span>Lucas G.</span>
+        </div>
+      </div>
+      <div class="cambio">
+        <span class="minuto">35'</span>
         <div class="jugadores-cambio">
           <span>Esteban</span>
           <span class="flecha">→</span>
@@ -1011,11 +1032,51 @@
         </div>
       </div>
       <div class="cambio">
-        <span class="minuto">65'</span>
+        <span class="minuto">35'</span>
         <div class="jugadores-cambio">
           <span>Diego</span>
           <span class="flecha">→</span>
-          <span>Lucas O.</span>
+          <span>Brandon</span>
+        </div>
+      </div>
+      <div class="cambio">
+        <span class="minuto">49'</span>
+        <div class="jugadores-cambio">
+          <span>Brandon</span>
+          <span class="flecha">→</span>
+          <span>Marcos</span>
+        </div>
+      </div>
+      <div class="cambio">
+        <span class="minuto">62'</span>
+        <div class="jugadores-cambio">
+          <span>Rodri</span>
+          <span class="flecha">→</span>
+          <span>Edu</span>
+        </div>
+      </div>
+      <div class="cambio">
+        <span class="minuto">62'</span>
+        <div class="jugadores-cambio">
+          <span>Mario</span>
+          <span class="flecha">→</span>
+          <span>Ronald</span>
+        </div>
+      </div>
+      <div class="cambio">
+        <span class="minuto">62'</span>
+        <div class="jugadores-cambio">
+          <span>Lucas G.</span>
+          <span class="flecha">→</span>
+          <span>Papu</span>
+        </div>
+      </div>
+      <div class="cambio">
+        <span class="minuto">62'</span>
+        <div class="jugadores-cambio">
+          <span>Íñigo</span>
+          <span class="flecha">→</span>
+          <span>Esteban</span>
         </div>
       </div>
     </div>
