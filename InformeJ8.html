@@ -708,7 +708,7 @@
     <div class="container-responsive">
       <div class="header-responsive">
         <div class="team-name-responsive">E.F.M.O. Boadilla</div>
-        <div class="formation-responsive">5-2-3</div>
+        <div class="formation-responsive">5-3-2</div>
       </div>
 
       <div class="content-responsive">
@@ -747,12 +747,12 @@
         ],
         'mediocentros': [
           { number: '8', name: 'Íñigo', rating: '7,8', goals: 0, assists: 1, cards: null },
+          { number: '22', name: 'Brandon', rating: '6,8', goals: 0, assists: 0, cards: null },
           { number: '10', name: 'Gonzalo', rating: '7,3', goals: 0, assists: 0, cards: null }
         ],
         'delanteros': [
-          { number: '7', name: 'Javi', rating: '8,7', goals: 2, assists: 0, cards: null },
           { number: '9', name: 'Lucas O.', rating: '7,2', goals: 1, assists: 0, cards: '🟨' },
-          { number: '22', name: 'Brandon', rating: '6,8', goals: 0, assists: 0, cards: null }
+          { number: '7', name: 'Javi', rating: '8,7', goals: 2, assists: 0, cards: null }
         ]
       };
 
@@ -768,7 +768,7 @@
 
       // Configuraciones de formaciones
       const formationsConfirmada = {
-        '5-2-3': [
+        '5-3-2': [
           playersConfirmada.delanteros,
           playersConfirmada.mediocentros,
           playersConfirmada.defensas,
@@ -926,7 +926,7 @@
         }, 100);
       }
 
-      renderFormationConfirmada('5-2-3');
+      renderFormationConfirmada('5-3-2');
       renderBench();
     </script>
   </div>
