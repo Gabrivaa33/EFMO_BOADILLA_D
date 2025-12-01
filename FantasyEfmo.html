@@ -1137,61 +1137,61 @@
     }
     
     function render(){
-      const grid = document.getElementById('gridView');
-      const posFilter = document.getElementById('positionFilter').value;
-      const statusFilter = document.getElementById('statusFilter').value;
-      const filtered = players.filter(p => 
-        (posFilter === 'all' || p.pos === posFilter) && 
-        (statusFilter === 'all' || p.status === statusFilter)
-      );
+  const grid = document.getElementById('gridView');
+  const posFilter = document.getElementById('positionFilter').value;
+  const statusFilter = document.getElementById('statusFilter').value;
+  const filtered = players.filter(p => 
+    (posFilter === 'all' || p.pos === posFilter) && 
+    (statusFilter === 'all' || p.status === statusFilter)
+  );
+  
+  grid.innerHTML = '';
+
+  filtered.forEach(p => {
+    const lastFive = p.performances.slice(-5);  // ← CAMBIADO A -5
+    const totals = calculateTotals(p.performances);
+    const avgPoints = calculateAvg(p.performances);
+
+    const card = document.createElement('div');
+    card.className = `player-card ${getCardStatusClass(p.status)}`;
+    
+    card.innerHTML = `
+      <div class="player-header">
+        <div class="player-info">
+          <div class="player-name">${p.name}</div>
+          <div class="player-position ${getPositionClass(p.pos)}">${p.pos}</div>
+        </div>
+        <div class="player-points">
+          <div class="points-label">Puntos</div>
+          <div class="points-value">${totals.points}</div>
+          <div class="points-avg">Media: ${avgPoints}</div>
+        </div>
+      </div>
       
-      grid.innerHTML = '';
+      <div class="player-performance">
+        <div class="performance-label">Últimas jornadas</div>
+        <div class="performance-badges">
+          ${lastFive.map(l => renderScoreBadge(l.points)).join('')}  <!-- ← CAMBIADO A lastFive -->
+        </div>
+      </div>
+      
+      <div>
+        ${renderStatusBadge(p.status)}
+      </div>
+    `;
+    
+    card.onclick = () => openModal(p.id);
+    grid.appendChild(card);
+  });
 
-      filtered.forEach(p => {
-        const lastThree = p.performances.slice(-3);
-        const totals = calculateTotals(p.performances);
-        const avgPoints = calculateAvg(p.performances);
+  // Actualizar contadores
+  document.getElementById('playerCount').textContent = players.length;
+  document.getElementById('injuredCount').textContent = players.filter(p => p.status === "Lesionado").length;
+  document.getElementById('doubtCount').textContent = players.filter(p => p.status === "Duda").length;
+  document.getElementById('showingCount').textContent = filtered.length;
 
-        const card = document.createElement('div');
-        card.className = `player-card ${getCardStatusClass(p.status)}`;
-        
-        card.innerHTML = `
-          <div class="player-header">
-            <div class="player-info">
-              <div class="player-name">${p.name}</div>
-              <div class="player-position ${getPositionClass(p.pos)}">${p.pos}</div>
-            </div>
-            <div class="player-points">
-              <div class="points-label">Puntos</div>
-              <div class="points-value">${totals.points}</div>
-              <div class="points-avg">Media: ${avgPoints}</div>
-            </div>
-          </div>
-          
-          <div class="player-performance">
-            <div class="performance-label">Últimas jornadas</div>
-            <div class="performance-badges">
-              ${lastThree.map(l => renderScoreBadge(l.points)).join('')}
-            </div>
-          </div>
-          
-          <div>
-            ${renderStatusBadge(p.status)}
-          </div>
-        `;
-        
-        card.onclick = () => openModal(p.id);
-        grid.appendChild(card);
-      });
-
-      // Actualizar contadores
-      document.getElementById('playerCount').textContent = players.length;
-      document.getElementById('injuredCount').textContent = players.filter(p => p.status === "Lesionado").length;
-      document.getElementById('doubtCount').textContent = players.filter(p => p.status === "Duda").length;
-      document.getElementById('showingCount').textContent = filtered.length;
-
-      renderInjuryFeed();
-    }
+  renderInjuryFeed();
+}
 
     function openModal(id){
       const p = players.find(x => x.id === id); 
