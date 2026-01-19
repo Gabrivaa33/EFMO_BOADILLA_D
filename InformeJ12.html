@@ -736,35 +736,35 @@
       // MODIFICADO: Agregar campo 'cards' a cada jugador
       const playersConfirmada = {
         'portero': [
-          { number: '1', name: 'Edu', rating: '-', goals: 0, assists: 0, cards: null }
+          { number: '1', name: 'Edu', rating: '7,7', goals: 0, assists: 0, cards: null }
         ],
         'defensas': [
-          { number: '21', name: 'Lucas G.', rating: '-', goals: 0, assists: 0, cards: null },
-          { number: '3', name: 'Alonso', rating: '-', goals: 0, assists: 0, cards: null },
-          { number: '5', name: 'Thiago', rating: '-', goals: 0, assists: 0, cards: null },
-          { number: '6', name: 'Pablo', rating: '-', goals: 0, assists: 0, cards: null },
-          { number: '2', name: 'Mario', rating: '-', goals: 0, assists: 0, cards: null }
+          { number: '21', name: 'Lucas G.', rating: '6,4', goals: 0, assists: 0, cards: null },
+          { number: '3', name: 'Alonso', rating: '7,0', goals: 0, assists: 0, cards: null },
+          { number: '5', name: 'Thiago', rating: '7,5', goals: 0, assists: 0, cards: null },
+          { number: '6', name: 'Pablo', rating: '7,5', goals: 0, assists: 0, cards: null },
+          { number: '2', name: 'Mario', rating: '7,3', goals: 0, assists: 0, cards: null }
         ], //El último sin coma
         'mediocentros': [
-          { number: '8', name: 'Íñigo', rating: '-', goals: 0, assists: 0, cards: null },
-          { number: '7', name: 'Javi', rating: '-', goals: 0, assists: 0, cards: null },
-          { number: '20', name: 'Marcos', rating: '-', goals: 0, assists: 0, cards: null }
+          { number: '8', name: 'Íñigo', rating: '6,8', goals: 0, assists: 0, cards: null },
+          { number: '7', name: 'Javi', rating: '7,0', goals: 0, assists: 0, cards: null },
+          { number: '20', name: 'Marcos', rating: '7,1', goals: 0, assists: 0, cards: null }
         ], //El último sin coma
         'delanteros': [
-          { number: '17', name: 'Diego', rating: '-', goals: 0, assists: 0, cards: null },
-          { number: '19', name: 'Sergio', rating: '-', goals: 0, assists: 0, cards: null }
+          { number: '17', name: 'Diego', rating: '6,7', goals: 0, assists: 0, cards: null },
+          { number: '19', name: 'Sergio', rating: '7,0', goals: 0, assists: 0, cards: null }
         ] //El último sin coma
       };
 
       // Datos del banquillo - MODIFICADO: Agregar campo 'cards'
       const benchPlayers = [
-        { number: '18', name: 'Yago', rating: '-', goals: 0, assists: 0, cards: null },
-        { number: '4', name: 'Lucas S.', rating: '-', goals: 0, assists: 0, cards: null },
-        { number: '12', name: 'Ronald', rating: '-', goals: 0, assists: 0, cards: null },
-        { number: '15', name: 'Papu', rating: '-', goals: 0, assists: 0, cards: null },
-        { number: '10', name: 'Gonzalo', rating: '-', goals: 0, assists: 0, cards: null },
-        { number: '11', name: 'Gascón', rating: '-', goals: 0, assists: 0, cards: null },
-        { number: '9', name: 'Lucas O.', rating: '-', goals: 0, assists: 0, cards: null }
+        { number: '18', name: 'Yago', rating: '6,8', goals: 0, assists: 0, cards: null },
+        { number: '4', name: 'Lucas S.', rating: '7,4', goals: 0, assists: 0, cards: null },
+        { number: '12', name: 'Ronald', rating: '6,8', goals: 0, assists: 0, cards: null },
+        { number: '15', name: 'Papu', rating: '6,8', goals: 0, assists: 0, cards: null },
+        { number: '10', name: 'Gonzalo', rating: '6,4', goals: 0, assists: 0, cards: null },
+        { number: '11', name: 'Gascón', rating: '6,9', goals: 0, assists: 0, cards: null },
+        { number: '9', name: 'Lucas O.', rating: '6,6', goals: 0, assists: 0, cards: null }
       ]; //El último sin coma
 
       // Configuraciones de formaciones <!-- Cambiar formación en caso necesario -->
@@ -949,6 +949,88 @@
       </div>
   </div> -->
 
+  <!-- Once Final -->
+  <div class="seccion">
+    <h3>Once Final</h3>
+    <div class="formacion-titulo">5-3-2</div> <!-- Cambiar formación en caso necesario -->
+
+    <div class="field-container-responsive">
+      <div class="field-responsive">
+        <div class="grass-pattern-responsive"></div>
+
+        <div class="players-formation-responsive" id="formation-container-final">
+          <!-- La formación se genera automáticamente -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Datos de los jugadores organizados por posición - ONCE FINAL
+      const playersFinal = {
+        'portero': [
+          { number: '1', name: 'Edu' }
+        ],
+        'defensas': [
+          { number: '2', name: 'Mario' },
+          { number: '4', name: 'Lucas S.' },
+          { number: '5', name: 'Thiago' },
+          { number: '6', name: 'Pablo' },
+          { number: '12', name: 'Ronald' }
+        ], //El último sin coma
+        'mediocentros': [
+          { number: '20', name: 'Marcos' },
+          { number: '17', name: 'Diego' },
+          { number: '11', name: 'Gascón' }
+        ], //El último sin coma
+        'delanteros': [
+          { number: '9', name: 'Lucas O.' },
+          { number: '19', name: 'Sergio' }
+        ] //El último sin coma
+      };
+
+      // Configuraciones de formaciones <!-- Cambiar formación en caso necesario -->
+      const formationsFinal = {
+        '5-3-2': [
+          playersFinal.delanteros,
+          playersFinal.mediocentros,
+          playersFinal.defensas,
+          playersFinal.portero
+        ]
+      };
+
+      // Función para renderizar una formación
+      function renderFormationFinal(formationKey) {
+        const formationContainer = document.getElementById('formation-container-final');
+        formationContainer.innerHTML = '';
+
+        const formation = formationsFinal[formationKey];
+
+        formation.forEach(rowPlayers => {
+          const row = document.createElement('div');
+          row.className = 'player-row-responsive';
+
+          rowPlayers.forEach(player => {
+            const playerElement = document.createElement('div');
+            playerElement.className = 'player-responsive';
+
+            playerElement.innerHTML = `
+              <div class="player-circle-responsive">${player.number}</div>
+              <div class="player-name-responsive">${player.name}</div>
+            `;
+
+            row.appendChild(playerElement);
+          });
+
+          formationContainer.appendChild(row);
+        });
+      }
+
+      // Renderizar formación para once final <!-- Cambiar formación en caso necesario -->
+      renderFormationFinal('5-3-2'); 
+    </script>
+  </div>
+
+</div>
   
 </body>
 </html>
