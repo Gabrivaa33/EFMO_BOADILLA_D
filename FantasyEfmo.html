@@ -820,9 +820,10 @@
         {points:8, minutes:70, goals:0, assists:0, cards:0, comment:'(7,6)'},
         {points:3, minutes:46, goals:0, assists:0, cards:0, comment:'↪️↩️ (6,6)'},
         {points:10, minutes:70, goals:0, assists:0, cards:0, comment:'(8,2)'},
+        {points:6, minutes:70, goals:0, assists:0, cards:0, comment:'(7,2)'},
       ]},
       
-      { id:2, name:'Rodri', pos:'Portero', status:'OK', performances:[
+      { id:2, name:'Rodri', pos:'Portero', status:'Duda', performances:[
         {points:6, minutes:35, goals:0, assists:0, cards:0, comment:'↩️ (7,2)'},
         {points:3, minutes:35, goals:0, assists:0, cards:0, comment:'↪️ (6,7)'},
         {points:3, minutes:0, goals:0, assists:0, cards:1, comment:'↩️ (6,7)'},
@@ -845,9 +846,10 @@
         {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
         {points:5, minutes:24, goals:0, assists:0, cards:0, comment:'↩️↪️ (7,1)'},
         {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
+        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
       ]},
       
-      { id:3, name:'Thiago', pos:'Defensa', status:'OK', performances:[
+      { id:3, name:'Thiago', pos:'Defensa', status:'Lesionado', performances:[
         {points:4, minutes:61, goals:0, assists:0, cards:0, comment:'↪️ (6,8)'},
         {points:7, minutes:54, goals:0, assists:0, cards:0, comment:'↪️↩️ (7,5)'},
         {points:6, minutes:70, goals:0, assists:0, cards:0, comment:'(7,2)'},
@@ -870,6 +872,7 @@
         {points:9, minutes:70, goals:0, assists:0, cards:0, comment:'(7,8)'},
         {points:4, minutes:70, goals:0, assists:0, cards:0, comment:'(6,9)'},
         {points:6, minutes:49, goals:0, assists:0, cards:0, comment:'↪️↩️↪️ (7,3)'},
+        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
       ]},
       
       { id:4, name:'Pablo', pos:'Defensa', status:'OK', performances:[
@@ -895,6 +898,7 @@
         {points:8, minutes:70, goals:0, assists:0, cards:0, comment:'(7,7)'},
         {points:4, minutes:70, goals:0, assists:0, cards:0, comment:'(6,8)'},
         {points:8, minutes:58, goals:0, assists:0, cards:0, comment:'↪️↩️ (7,7)'},
+        {points:7, minutes:70, goals:0, assists:0, cards:0, comment:'(7,4)'},
       ]},
       
       { id:5, name:'Yago', pos:'Defensa', status:'OK', performances:[
@@ -1239,7 +1243,7 @@
         {points:10, minutes:49, goals:1, assists:0, cards:0, comment:'↪️↩️↪️↩️⚽ (7,5+⚽)'},
       ]},
       
-      { id:19, name:'Javi', pos:'Centrocampista', status:'OK', performances:[
+      { id:19, name:'Javi', pos:'Centrocampista', status:'Lesionado', performances:[
         {points:9, minutes:56, goals:0, assists:1, cards:0, comment:'↪️↩️🅰️ (7,6+🅰️)'},
         {points:12, minutes:41, goals:1, assists:0, cards:0, comment:'↪️↩️↪️↩️⚽ (7,7+⚽)'},
         {points:5, minutes:57, goals:0, assists:0, cards:0, comment:'↪️ (7,1)'},
@@ -1289,7 +1293,7 @@
         {points:22, minutes:49, goals:2, assists:2, cards:0, comment:'↪️↩️⚽⚽🅰️🅰️ (9,9+⚽⚽+🅰️🅰️)'},
       ]},
       
-      { id:21, name:'Sergio', pos:'Atacante', status:'Duda', performances:[
+      { id:21, name:'Sergio', pos:'Atacante', status:'OK', performances:[
         {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
         {points:3, minutes:38, goals:0, assists:0, cards:0, comment:'↩️↪️↩️ (6,7)'},
         {points:6, minutes:70, goals:0, assists:0, cards:0, comment:'(7,3)'},
@@ -1342,17 +1346,19 @@
 
     // 📰 Noticias del equipo D con enlaces
     const news = [
-     // { playerId: null, title: 'Jornada 23', text: "AD Piqueñas 'B' - EFMO Boadilla 'D'", url: "InformeJ23.html" },
+      { playerId: null, title: 'Jornada 24', text: "EFMO Boadilla 'D' - CD Los Yébenes-San Bruno 'C'", url: "InformeJ24.html" },
+      { playerId: null, title: 'Jornada 23', text: "AD Piqueñas 'B' 2-3 EFMO Boadilla 'D'", url: "InformeJ23.html" },
+      { playerId: 2, title: 'Duda', text: "Molestias en la muñeca, 3-7 días" }, //Rodri
+      { playerId: 3, title: 'Lesión', text: "Lesión de cuádriceps, 3-5 semanas" }, //Thiago
+      { playerId: 19, title: 'Lesión', text: "Lesión de muñeca, 2-4 semanas" }, //Javi
       { playerId: null, title: 'Jornada 22', text: "EFMO Boadilla 'D' 6-0 CDE Colegio Juan Pablo II", url: "InformeJ22.html" },
-     // { playerId: 3, title: 'Duda', text: "Molestias en la rodilla, 5-10 días" }, //Thiago
       { playerId: null, title: 'Jornada 21', text: "AD Escuela de Fútbol de Carabanchel 'C' 3-3 EFMO Boadilla 'D'", url: "InformeJ21.html" },
       { playerId: null, title: 'Jornada 20', text: "EFMO Boadilla 'D' 1-0 ACD Fátima 'C'", url: "InformeJ20.html" },
-      { playerId: 21, title: 'Duda', text: "Molestias en la espalda, 3-5 semanas" }, //Sergio
+     // { playerId: 21, title: 'Duda', text: "Molestias en la espalda, 3-5 semanas" }, //Sergio
       { playerId: null, title: 'Jornada 19', text: "Cantera FC 'B' 1-6 EFMO Boadilla 'D'", url: "InformeJ19.html" },
      // { playerId: 13, title: 'Lesión', text: "Lesión de pie, 2-4 semanas" }, //Esteban
       { playerId: null, title: 'Jornada 18', text: "EFMO Boadilla 'D' 0-0 Escuela Fútbol Madrid Sur 'B'", url: "InformeJ18.html" },
       { playerId: null, title: 'Jornada 17', text: "CD Libertad Alcorcón 'F' 2-2 EFMO Boadilla 'D'", url: "InformeJ17.html" },
-     // { playerId: 3, title: 'Duda', text: "Molestias en el cuádriceps, 5-10 días" }, //Thiago
       { playerId: null, title: 'Jornada 16', text: "EFMO Boadilla 'D' 3-0 CD Nuevo Boadilla 'L'", url: "InformeJ16.html" },
       { playerId: null, title: 'Jornada 15', text: "EFMO Boadilla 'D' 6-0 La Mutual Juan XXIII 'B'", url: "InformeJ15.html" },
       { playerId: null, title: 'Jornada 14', text: "Agrup. CD Lucero Linces 'B' 2-2 EFMO Boadilla 'D'", url: "InformeJ14.html" },
